@@ -1,0 +1,25 @@
+package practice;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+public class BrowserCommand1 {
+
+	public static void main(String[] args) {
+		WebDriver driver = new EdgeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.flipkart.com/");
+		String page=driver.getTitle();
+		int titleLength= driver.getTitle().length();
+		System.out.println("The Page title is:"+page);
+		System.out.println("The page Title Length:"+titleLength);
+		System.out.println(driver.getCurrentUrl());
+		String pageSource=driver.getPageSource();
+		int lengthSource=driver.getPageSource().length();
+		System.out.println("The page Source:"+pageSource);
+		System.out.println("The Page Source length:"+lengthSource);
+		driver.close();
+	}
+}
